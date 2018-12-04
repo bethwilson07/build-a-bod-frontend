@@ -16,7 +16,16 @@ class Exercise {
     <img class="exercise-photo" src=${this.image} />
     `
     return div;
+  }
 
+  renderBuffet() {
+    let div = document.createElement('div')
+    div.id = `exercise-${this.id}`
+    div.innerHTML = `
+    <h4>${this.name}</h4>
+    <img class="exercise-photo" src=${this.image} />
+    `
+    return div;
   }
 
 }
