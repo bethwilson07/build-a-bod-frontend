@@ -1,9 +1,10 @@
 class Workout {
-  constructor(name, day, muscle_group, duration) {
-    this.name = name
-    this.day = day
-    this.muscle_group = muscle_group
-    this.duration = duration
+  constructor(id, name, day, muscle_group, duration) {
+    this.id = id,
+    this.name = name,
+    this.day = day,
+    this.muscle_group = muscle_group,
+    this.duration = duration,
     this.exercises = []
 
     // this.exercises.forEach(exercise => {
@@ -17,7 +18,7 @@ class Workout {
   render() {
     let div = document.createElement('div');
     div.classList.add('card');
-    div.id = `${this.id}`
+    div.id = `workout-${this.id}` //undefined
     div.innerHTML = `
      <h3>${this.name}</h3>
      <p>Day: ${this.day}</p>
@@ -27,7 +28,7 @@ class Workout {
        `
       // this.exercises.forEach(exercise => {
       // workoutDiv.querySelector('ul').appendChild(exercise.render())
-    })
+    // })
 
     return div
   }
