@@ -11,6 +11,7 @@ class Exercise {
   renderExercise() {
     let div = document.createElement('div')
     div.id = `exercise-${this.id}`
+    div.classList.add('inner-card')
     div.innerHTML = `
     <h4>${this.name}</h4>
     <img class="exercise-photo" src=${this.image} />
@@ -21,6 +22,7 @@ class Exercise {
   renderBuffet() {
     let div = document.createElement('div')
     div.id = `exercise-${this.id}`
+    div.classList.add('exercise-card')
     div.innerHTML = `
     <h4>${this.name}</h4>
     <img class="exercise-photo" src=${this.image} />

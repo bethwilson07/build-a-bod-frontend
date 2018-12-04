@@ -24,7 +24,7 @@ class Workout {
      <p>Day: ${this.day}</p>
      <p>Muscle Group: ${this.muscle_group}</p>
      <p>Duration: ${this.duration} minutes</p>
-     <div>Exercises:</div>
+     <div></div><br>
        `
       this.exercises.forEach(exercise => {
       div.querySelector('div').appendChild(exercise.renderExercise())

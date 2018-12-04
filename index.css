@@ -1,8 +1,7 @@
 .card {
  text-align: center;
  border: grey solid 1px;
- padding: 1rem;
- width: 25rem;
+ width: 35rem;
  height: 25rem;
  display: inline-grid;
  margin: 1rem 2rem;
@@ -14,4 +13,21 @@
  height: 5rem;
  width: 5rem;
  float: left;
+}
+
+.exercise-card {
+  text-align: center;
+  border: grey solid 1px;
+  width: 15rem;
+  height: 15rem;
+  display: inline-grid;
+  box-shadow: 3px 4px
+}
+
+.inner-card {
+  text-align: center;
+  border: grey solid 0.5px;
+  width: 10rem;
+  height: 10rem;
+  display: inline-grid;
 }
