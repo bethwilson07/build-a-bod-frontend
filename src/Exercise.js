@@ -8,21 +8,15 @@ class Exercise {
     this.video = video
   }
 
-  // render() {
-  //
-  //   fetch('http://localhost:3000/exercises')
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  //
-  //   let li = document.createElement('li')
-  //   li.innerHTML = `
-  //   <h4>${this.name}</h4>
-  //   <p>Description: ${this.description}</p>
-  //   <p>Muscle Group: ${this.muscle_group}</p>
-  //   <img alt=${this.name} src=${this.image} />
-  //   `
-  //   return li;
-  //
-  // }
+  renderExercise() {
+    let div = document.createElement('div')
+    div.id = `exercise-${this.id}`
+    div.innerHTML = `
+    <h4>${this.name}</h4>
+    <img class="exercise-photo" src=${this.image} />
+    `
+    return div;
+
+  }
 
 }
