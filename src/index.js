@@ -25,18 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
       let exerciseId = dragged.id.split('-')[1];
       let woId = event.target.dataset.workoutId;
       addExToWorkout(exerciseId, woId)
-
     }
   }, false)
-
-
-  // document.addEventListener('dragend', function(event) {
-  //   event.preventDefault();
-  //   if (event.target.className.includes("dropzone")) {
-  //     debugger
-  //   }
-  // })
-
 
 })
 
@@ -139,6 +129,9 @@ function addExToWorkout(exerciseId, woId) {
       console.log(data)
       let newExercise = document.querySelector(`#exercise-${data.exercise_id}`);
       let exDiv = document.querySelector(`#exercises-${data.workout_id}`);
+      newExercise.classList.add('inner-card');
+      newExercise.classList.remove('exercise-card');
+
       exDiv.appendChild(newExercise)
 
     })
