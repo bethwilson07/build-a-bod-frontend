@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       let woId = dragged.parentNode.id.split('-')[1];
       getWorkoutExerciseId(exerciseId, woId)
+      dragged.remove();
     }
   }, false)
 
@@ -155,9 +156,17 @@ function getWorkoutExerciseId(exerciseId, woId) {
   fetch(`http://localhost:3000/workout_exercises/`)
   .then(res => res.json())
   .then(workoutExercises => {
-    let workoutExId = workoutExercises.find(woEx => {
-      return woEx.workout_id === woId && woEx.exercise_id === exerciseId
+    let workoutEx = workoutExercises.find(woEx => {
+      return woEx.workout_id == woId && woEx.exercise_id == exerciseId
     })
-    console.log(workoutExId)
+    deleteWorkoutExercise(workoutEx)
+  })
+}
+
+function deleteWorkoutExercise(workoutEx) {
+  let id = workoutEx.id;
+  debugger
+  fetch(`http://localhost:3000/workout_exercises/${id}`, {
+    method: "DELETE"
   })
 }
