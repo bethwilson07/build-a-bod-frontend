@@ -4,9 +4,31 @@ document.addEventListener("DOMContentLoaded", function () {
   getForm().addEventListener('submit', function(event) {
     createNewWorkout(event)
   })
+
+  let dragged;
+
   document.addEventListener('drag', function(event) {
-    drag(event)
+    event.dataTransfer.setData("exercise", event.target.id);
   }, false)
+
+  document.addEventListener('dragstart', function(event) {
+    dragged = event.target;
+  }, false)
+
+  document.addEventListener('dragover', function(event) {
+    event.preventDefault();
+  }, false)
+
+  document.addEventListener('drop', function(event) {
+    event.preventDefault();
+    if (event.target.className.includes("dropzone")) {
+      //patchFetch
+      let exDiv = event.target.querySelector('#exercises');
+      exDiv.appendChild(dragged);
+    }
+  }, false)
+
+
 
 })
 
@@ -87,21 +109,4 @@ function deleteFetch(id) {
  fetch(`http://localhost:3000/workouts/${id}`, {
    method: "DELETE"
  })
-}
-
-function drag(event) {
-  event.dataTransfer.setData("exercise", event.target.id);
-}
-
-function allowDrop(event) {
-  debugger
-  event.preventDefault();
-}
-
-function drop(event) {
-  debugger
-    event.preventDefault();
-    var data = event.dataTransfer.getData("Text");
-    event.target.appendChild(document.getElementById(data));
-    document.getElementById("demo").innerHTML = "The p element was dropped";
 }

@@ -11,7 +11,6 @@ class Exercise {
   renderExercise() {
     let div = document.createElement('div')
     div.draggable = "true"
-    div.ondragstart= "drag(event)"
     div.id = `exercise-${this.id}`
     div.classList.add('inner-card')
 
@@ -30,7 +29,6 @@ class Exercise {
   renderBuffet() {
     let div = document.createElement('div')
     div.draggable = "true"
-    div.ondragstart= "drag(event)"
     div.id = `exercise-${this.id}`
 
     div.classList.add('exercise-card')

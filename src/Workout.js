@@ -17,25 +17,29 @@ class Workout {
 
   render() {
     let div = document.createElement('div');
-    div.ondrop="drop(event)"
-    div.ondragover="allowDrop(event)"
     div.classList.add('card');
-    div.classList.add('dropzone')
     div.id = `workout-${this.id}`
+    div.classList.add('dropzone')
 
     let name = document.createElement('h3')
     name.innerText = `${this.name}`
+    name.classList.add('dropzone')
 
     let day = document.createElement('p')
     day.innerText = `${this.day}`
+    day.classList.add('dropzone')
 
     let muscleGroup = document.createElement('p')
     muscleGroup.innerText = `Muscle Group: ${this.muscle_group}`
+    muscleGroup.classList.add('dropzone')
 
     let duration = document.createElement('p')
     duration.innerText = `${this.duration} minutes`
+    duration.classList.add('dropzone')
 
     let exercises = document.createElement('div')
+    exercises.id = `exercises`
+    exercises.classList.add('dropzone')
 
     let deleteButton = document.createElement('button')
     deleteButton.id = `delete-workout-${this.id}`
