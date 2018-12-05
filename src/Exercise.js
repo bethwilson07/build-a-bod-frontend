@@ -14,6 +14,8 @@ class Exercise {
     div.id = `exercise-${this.id}`
     div.classList.add('inner-card')
 
+    
+
     let nameEl = document.createElement('h4');
     nameEl.innerText = `${this.name}`
 
