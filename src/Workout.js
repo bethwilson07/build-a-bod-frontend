@@ -19,19 +19,31 @@ class Workout {
     let div = document.createElement('div');
     div.classList.add('card');
     div.id = `workout-${this.id}`
-    div.innerHTML = `
-     <h3>${this.name}</h3>
-     <p>Day: ${this.day}</p>
-     <p>Muscle Group: ${this.muscle_group}</p>
-     <p>Duration: ${this.duration} minutes</p>
-     <div></div><br>
-     <button id="delete-workout">Delete Workout</button> `
 
+    let name = document.createElement('h3')
+    name.innerText = `${this.name}`
+
+    let day = document.createElement('p')
+    day.innerText = `${this.day}`
+
+    let muscleGroup = document.createElement('p')
+    muscleGroup.innerText = `Muscle Group: ${this.muscle_group}`
+
+    let duration = document.createElement('p')
+    duration.innerText = `${this.duration} minutes`
+
+    let exercises = document.createElement('div')
+
+    let deleteButton = document.createElement('button')
+    deleteButton.id = 'delete-workout'
+    deleteButton.innerText = 'Delete Workout'
+
+    div.append(name, day, muscleGroup, duration, exercises, deleteButton)
 
       this.exercises.forEach(exercise => {
-      div.querySelector('div').appendChild(exercise.renderExercise())
+      exercises.appendChild(exercise.renderExercise())
       })
-      // 
+      //
       // let delBtn = document.querySelector("#delete-workout")
       // debugger
       // delBtn.addEventListener('click', function(e) {
