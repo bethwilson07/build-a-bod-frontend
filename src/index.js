@@ -22,16 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener('drop', function(event) {
     event.preventDefault();
     if (event.target.className.includes("dropzone")) {
-
-
-
-
-
-      let exDiv = event.target.querySelector('#exercises');
-      dragged.classList.add('inner-card');
-      dragged.classList.remove('exercise-card');
-
-      exDiv.appendChild(dragged);
+      let exerciseId = dragged.id.split('-')[1];
+      let woId = event.target.dataset.workoutId;
+      getExerciseData(exerciseId, woId);
+      //
+      // let exDiv = event.target.querySelector('#exercises');
+      // dragged.classList.add('inner-card');
+      // dragged.classList.remove('exercise-card');
+      //
+      // exDiv.appendChild(dragged);
     }
   }, false)
 
@@ -127,21 +126,29 @@ function deleteFetch(id) {
 }
 /////////////////////////////////
 
-function addExToWorkout(exerciseData) {
-  let data = {
-    id: exerciseData.id,
-    name: exerciseData.name,
-    description: exerciseData.description,
-    muscle_group: exerciseData.muscle_group,
-    image: exerciseData.image,
-    video: exerciseData.video
-  }
+function getExerciseData(exId, woId) {
 
-  debugger
-}
-
-function getExerciseData(exId) {
   fetch(`http://localhost:3000/exercises/${exId}`)
     .then(res => res.json())
-    .then(exerciseData => addExToWorkout(exerciseData))
+    .then(exerciseData => {
+       addExToWorkout(exerciseData, woId)
+    })
+}
+
+function addExToWorkout(exerciseData, woId) {
+  debugger
+  let data = {
+    exercises: exerciseData
+  }
+  fetch(`http://localhost:3000/workouts/${woId}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+    .then(res => res.json())
+    .then(data => console.log(data))
+
 }
