@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
   getForm().addEventListener('submit', function(event) {
     createNewWorkout(event)
   })
+  document.addEventListener('drag', function(event) {
+    drag(event)
+  }, false)
+
 })
 
 function getForm() {
@@ -85,9 +89,8 @@ function deleteFetch(id) {
  })
 }
 
-function drag(ev) {
-  debugger
-    ev.dataTransfer.setData("exercise", ev.target.id);
+function drag(event) {
+  event.dataTransfer.setData("exercise", event.target.id);
 }
 
 function allowDrop(event) {

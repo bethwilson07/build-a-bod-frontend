@@ -20,6 +20,7 @@ class Workout {
     div.ondrop="drop(event)"
     div.ondragover="allowDrop(event)"
     div.classList.add('card');
+    div.classList.add('dropzone')
     div.id = `workout-${this.id}`
 
     let name = document.createElement('h3')

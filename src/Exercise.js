@@ -14,10 +14,16 @@ class Exercise {
     div.ondragstart= "drag(event)"
     div.id = `exercise-${this.id}`
     div.classList.add('inner-card')
-    div.innerHTML = `
-    <h4>${this.name}</h4>
-    <img class="exercise-photo" src=${this.image} />
-    `
+
+    let nameEl = document.createElement('h4');
+    nameEl.innerText = `${this.name}`
+
+    let exImg = document.createElement('img')
+    exImg.className = "exercise-photo"
+    exImg.draggable = "false"
+    exImg.src = `${this.image}`
+
+    div.append(nameEl, exImg)
     return div;
   }
 
@@ -26,10 +32,11 @@ class Exercise {
     div.draggable = "true"
     div.ondragstart= "drag(event)"
     div.id = `exercise-${this.id}`
+
     div.classList.add('exercise-card')
     div.innerHTML = `
     <h4>${this.name}</h4>
-    <img class="exercise-photo" src=${this.image} />
+    <img class="exercise-photo" draggable="false" src=${this.image} />
     `
     return div;
   }
