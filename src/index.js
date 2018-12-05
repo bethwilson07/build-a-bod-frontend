@@ -22,15 +22,26 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener('drop', function(event) {
     event.preventDefault();
     if (event.target.className.includes("dropzone")) {
-      //patchFetch
+
+
+
+
+
       let exDiv = event.target.querySelector('#exercises');
       dragged.classList.add('inner-card');
       dragged.classList.remove('exercise-card');
-      
+
       exDiv.appendChild(dragged);
     }
   }, false)
 
+
+  // document.addEventListener('dragend', function(event) {
+  //   event.preventDefault();
+  //   if (event.target.className.includes("dropzone")) {
+  //     debugger
+  //   }
+  // })
 
 
 })
@@ -99,6 +110,7 @@ function postWorkout(data) {
     document.querySelector('#workoutContainer').appendChild(workoutInstance.render())
   })
 }
+//////////////////////////////
 
 function deleteWorkout(e) {
  let workoutId = e.target.id.split('-')[2]
@@ -112,4 +124,24 @@ function deleteFetch(id) {
  fetch(`http://localhost:3000/workouts/${id}`, {
    method: "DELETE"
  })
+}
+/////////////////////////////////
+
+function addExToWorkout(exerciseData) {
+  let data = {
+    id: exerciseData.id,
+    name: exerciseData.name,
+    description: exerciseData.description,
+    muscle_group: exerciseData.muscle_group,
+    image: exerciseData.image,
+    video: exerciseData.video
+  }
+
+  debugger
+}
+
+function getExerciseData(exId) {
+  fetch(`http://localhost:3000/exercises/${exId}`)
+    .then(res => res.json())
+    .then(exerciseData => addExToWorkout(exerciseData))
 }
