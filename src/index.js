@@ -24,13 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.target.className.includes("dropzone")) {
       let exerciseId = dragged.id.split('-')[1];
       let woId = event.target.dataset.workoutId;
-      getExerciseData(exerciseId, woId);
-      //
-      // let exDiv = event.target.querySelector('#exercises');
-      // dragged.classList.add('inner-card');
-      // dragged.classList.remove('exercise-card');
-      //
-      // exDiv.appendChild(dragged);
+      addExToWorkout(exerciseId, woId)
+
     }
   }, false)
 
@@ -126,21 +121,12 @@ function deleteFetch(id) {
 }
 /////////////////////////////////
 
-function getExerciseData(exId, woId) {
-
-  fetch(`http://localhost:3000/exercises/${exId}`)
-    .then(res => res.json())
-    .then(exerciseData => {
-       addExToWorkout(exerciseData, woId)
-    })
-}
-
-function addExToWorkout(exerciseData, woId) {
-  debugger
+function addExToWorkout(exerciseId, woId) {
   let data = {
-    exercises: exerciseData
+    workout_id: woId,
+    exercise_id: exerciseId
   }
-  fetch(`http://localhost:3000/workouts/${woId}`, {
+  fetch(`http://localhost:3000/workout_exercises`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -149,6 +135,22 @@ function addExToWorkout(exerciseData, woId) {
     body: JSON.stringify(data)
   })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => {
+      console.log(data)
+      let newExercise = document.querySelector(`#exercise-${data.exercise_id}`);
+      let exDiv = document.querySelector(`#exercises-${data.workout_id}`);
+      exDiv.appendChild(newExercise)
 
+    })
+
+}
+
+
+function getExerciseData(exId) {
+
+  fetch(`http://localhost:3000/exercises/${exId}`)
+    .then(res => res.json())
+    .then(exerciseData => {
+       addExToWorkout(exerciseData, woId)
+    })
 }

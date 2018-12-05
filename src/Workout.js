@@ -43,7 +43,7 @@ class Workout {
     duration.dataset.workoutId = `${this.id}`
 
     let exercises = document.createElement('div')
-    exercises.id = `exercises`
+    exercises.id = `exercises-${this.id}`
     exercises.classList.add('dropzone')
     exercises.dataset.workoutId = `${this.id}`
 
