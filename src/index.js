@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchExercises()
   getForm().addEventListener('submit', function(event) {
     createNewWorkout(event)
+    document.getElementById('newWorkout').reset()
   })
 
   let dragged;
