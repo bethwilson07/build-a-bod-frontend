@@ -21,10 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener('drop', function(event) {
     event.preventDefault();
+    let exerciseId = dragged.id.split('-')[1];
     if (event.target.className.includes("dropzone")) {
-      let exerciseId = dragged.id.split('-')[1];
       let woId = event.target.dataset.workoutId;
       addExToWorkout(exerciseId, woId)
+    } else {
+      let woId = dragged.parentNode.id.split('-')[1];
+      getWorkoutExerciseId(exerciseId, woId)
     }
   }, false)
 
@@ -146,4 +149,15 @@ function getExerciseData(exId) {
     .then(exerciseData => {
        addExToWorkout(exerciseData, woId)
     })
+}
+
+function getWorkoutExerciseId(exerciseId, woId) {
+  fetch(`http://localhost:3000/workout_exercises/`)
+  .then(res => res.json())
+  .then(workoutExercises => {
+    let workoutExId = workoutExercises.find(woEx => {
+      return woEx.workout_id === woId && woEx.exercise_id === exerciseId
+    })
+    console.log(workoutExId)
+  })
 }
