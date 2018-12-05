@@ -17,6 +17,8 @@ class Workout {
 
   render() {
     let div = document.createElement('div');
+    div.ondrop="drop(event)"
+    div.ondragover="allowDrop(event)"
     div.classList.add('card');
     div.id = `workout-${this.id}`
 

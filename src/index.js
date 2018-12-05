@@ -72,15 +72,33 @@ function postWorkout(data) {
 }
 
 function deleteWorkout(e) {
-  let workoutId = e.target.id.split('-')[2]
-  let workoutDiv = document.querySelector(`#workout-${workoutId}`)
-  workoutDiv.remove();
-  deleteFetch(workoutId)
+ let workoutId = e.target.id.split('-')[2]
+ let workoutDiv = document.querySelector(`#workout-${workoutId}`)
+ workoutDiv.remove();
+ deleteFetch(workoutId)
 
 }
 
 function deleteFetch(id) {
-  fetch(`http://localhost:3000/workouts/${id}`, {
-    method: "DELETE"
-  })
+ fetch(`http://localhost:3000/workouts/${id}`, {
+   method: "DELETE"
+ })
+}
+
+function drag(ev) {
+  debugger
+    ev.dataTransfer.setData("exercise", ev.target.id);
+}
+
+function allowDrop(event) {
+  debugger
+  event.preventDefault();
+}
+
+function drop(event) {
+  debugger
+    event.preventDefault();
+    var data = event.dataTransfer.getData("Text");
+    event.target.appendChild(document.getElementById(data));
+    document.getElementById("demo").innerHTML = "The p element was dropped";
 }
