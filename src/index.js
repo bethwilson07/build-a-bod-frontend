@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.target.className.includes("dropzone")) {
       //patchFetch
       let exDiv = event.target.querySelector('#exercises');
+      dragged.classList.add('inner-card');
+      dragged.classList.remove('exercise-card');
+      
       exDiv.appendChild(dragged);
     }
   }, false)
