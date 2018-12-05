@@ -8,5 +8,5 @@ Muscle group selector
 
 duration
 
-* create exercise cards
+* create exercise cards -- DONE
 * create a workout

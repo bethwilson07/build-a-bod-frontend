@@ -25,12 +25,21 @@ class Workout {
      <p>Muscle Group: ${this.muscle_group}</p>
      <p>Duration: ${this.duration} minutes</p>
      <div></div><br>
-       `
+     <button id="delete-workout">Delete Workout</button> `
+
+
       this.exercises.forEach(exercise => {
       div.querySelector('div').appendChild(exercise.renderExercise())
-    })
+      })
+      // 
+      // let delBtn = document.querySelector("#delete-workout")
+      // debugger
+      // delBtn.addEventListener('click', function(e) {
+      //   debugger
+      //   deleteWorkout(e)
+      // })
 
-    return div
+    return div;
   }
 }
 

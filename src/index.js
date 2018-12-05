@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchWorkouts()
   fetchExercises()
   getForm().addEventListener('submit', function(event) {
-
     createNewWorkout(event)
   })
 })
@@ -70,4 +69,10 @@ function postWorkout(data) {
       data.muscle_group, data.duration, data.exercises)
     document.querySelector('#workoutContainer').appendChild(workoutInstance.render())
   })
+}
+
+function deleteWorkout(e) {
+  debugger
+
+
 }
