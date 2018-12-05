@@ -35,21 +35,18 @@ class Workout {
     let exercises = document.createElement('div')
 
     let deleteButton = document.createElement('button')
-    deleteButton.id = 'delete-workout'
+    deleteButton.id = `delete-workout-${this.id}`
     deleteButton.innerText = 'Delete Workout'
+
+    deleteButton.addEventListener('click', function(e) {
+      deleteWorkout(e)
+    })
 
     div.append(name, day, muscleGroup, duration, exercises, deleteButton)
 
       this.exercises.forEach(exercise => {
       exercises.appendChild(exercise.renderExercise())
       })
-      //
-      // let delBtn = document.querySelector("#delete-workout")
-      // debugger
-      // delBtn.addEventListener('click', function(e) {
-      //   debugger
-      //   deleteWorkout(e)
-      // })
 
     return div;
   }

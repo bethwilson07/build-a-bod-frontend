@@ -72,7 +72,15 @@ function postWorkout(data) {
 }
 
 function deleteWorkout(e) {
-  debugger
+  let workoutId = e.target.id.split('-')[2]
+  let workoutDiv = document.querySelector(`#workout-${workoutId}`)
+  workoutDiv.remove();
+  deleteFetch(workoutId)
 
+}
 
+function deleteFetch(id) {
+  fetch(`http://localhost:3000/workouts/${id}`, {
+    method: "DELETE"
+  })
 }
