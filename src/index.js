@@ -21,11 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }, false)
 
   document.addEventListener('drop', function(event) {
+    debugger
     event.preventDefault();
     let exerciseId = dragged.id.split('-')[1];
-    if (event.target.className.includes("dropzone")) {
+
+    if (event.target.parentNode.className.includes("dropzone") &&
+    dragged.parentNode.parentNode.className.includes("dropzone")) {
+        // patch the workoutExercise join table's workout ID for the event.target
+      let oldWoId = dragged.parentNode.id.split('-')[1];
+      let newWoId = event.target.dataset.workoutId;
+      getWorkoutExerciseIdForPatch(exerciseId, oldWoId, newWoId)
+
+    } else if (event.target.parentNode.className.includes("dropzone")) {
       let woId = event.target.dataset.workoutId;
       addExToWorkout(exerciseId, woId)
+
     } else {
       let woId = dragged.parentNode.id.split('-')[1];
       getWorkoutExerciseId(exerciseId, woId)
@@ -166,8 +176,35 @@ function getWorkoutExerciseId(exerciseId, woId) {
 
 function deleteWorkoutExercise(workoutEx) {
   let id = workoutEx.id;
-  debugger
+
   fetch(`http://localhost:3000/workout_exercises/${id}`, {
     method: "DELETE"
+  })
+}
+
+function getWorkoutExerciseIdForPatch(exerciseId, oldWoId, newWoId) {
+  fetch(`http://localhost:3000/workout_exercises/`)
+  .then(res => res.json())
+  .then(workoutExercises => {
+    let workoutEx = workoutExercises.find(woEx => {
+      return woEx.workout_id == oldWoId && woEx.exercise_id == exerciseId
+    })
+    patchWorkoutExercise(workoutEx, newWoId)
+  })
+}
+
+function patchWorkoutExercise(workoutEx, newWoId) {
+  let id = workoutEx.id;
+  let data = {
+    workout_id: parseInt(newWoId),
+  }
+  debugger
+  fetch(`http://localhost:3000/workout_exercises/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(data)
   })
 }
