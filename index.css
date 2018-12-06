@@ -11,18 +11,16 @@ body {
   text-align: center;
   width: auto;
   padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   opacity: 0.9;
-}
-
-.image {
-  height: 175px;
-  width: 225px;
 }
 
 .title {
   text-align: center;
-  font-size: 4em;
+  font-size: 10em;
   color: #0099cc;
+  font-family: 'Bree Serif', serif;
 }
 
 .topsub {
@@ -30,13 +28,14 @@ body {
   font-style: italic;
   font-weight: lighter;
   padding-top: 20px;
+  font-family: 'Catamaran', sans-serif;
 }
 
 .sub {
   text-align: center;
-  font-style: italic;
-  font-weight: lighter;
+  font-weight: normal;
   padding-bottom: 20px;
+  font-family: 'Catamaran', sans-serif;
 }
 
 .card {
@@ -61,14 +60,15 @@ body {
   text-decoration: overline underline;
   padding-top: 20px;
   padding-bottom: 10px;
-  font-weight: lighter;
+  font-weight: normal;
   opacity:1;
+  font-family: 'Asap', sans-serif;
 }
 
 .create-workout-card {
   text-align: center;
   border: grey solid 1px;
-  width: 30rem;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,6 +80,7 @@ body {
   color: #1B1C1D;
   opacity: 1;
 }
+
 .exercises-div {
   padding-bottom: 10px;
 }

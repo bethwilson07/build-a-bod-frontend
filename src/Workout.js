@@ -38,7 +38,7 @@ class Workout {
     muscleGroup.dataset.workoutId = `${this.id}`
 
     let duration = document.createElement('p')
-    duration.innerText = `${this.duration} minutes`
+    duration.innerText = `${this.duration} mins`
     // duration.classList.add('dropzone')
     duration.dataset.workoutId = `${this.id}`
 

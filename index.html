@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Build-A-Bod</title>
+    <link href="https://fonts.googleapis.com/css?family=Asap:600|Bree+Serif|Catamaran" rel="stylesheet">
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -17,7 +18,6 @@
     <div class="background">
       <h2 class="topsub"> Welcome <br> to </h2>
       <h1 class="title"> Build-A-Bod</h1>
-      <img class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt7xhR4WTlOFoGFMkIiPJ2ifcSFpuc-vhZJmLEh8ZIKyjPGgKt">
       <h3 class="sub">Create and keep track of your own custom workouts!</h3>
     </div>
 
@@ -26,10 +26,10 @@
     <div class="create-workout-card">
       <form id="newWorkout">
 
-          <p>Workout Name:
-          <input type="text" id="workoutName" name="workoutName"></p>
+          <span style="font-weight: bold">Workout Name:</span>
+          <input type="text" id="workoutName" name="workoutName">
 
-          <p>Day:
+          <span style="font-weight: bold">Day:</span>
           <select id="workoutDay" type="text" name="workoutDay">
             <option value="">Select One</option>
             <option value="Monday">Monday</option>
@@ -39,9 +39,9 @@
             <option value="Friday">Friday</option>
             <option value="Saturday">Saturday</option>
             <option value="Sunday">Sunday</option>
-          </select></p>
+          </select>
 
-          <p>Muscle Group:
+          <span style="font-weight: bold">Muscle Group:</span>
           <select id="muscleGroup" type="text" name="muscleGroup">
             <option value="">Select One</option>
             <option value="Abs">Abs</option>
@@ -50,16 +50,16 @@
             <option value="Legs">Legs</option>
             <option value="Glutes">Glutes</option>
             <option value="Full Body">Full Body</option>
-          </select></p>
+          </select>
 
-          <p>Workout Duration:
+          <span style="font-weight: bold">Workout Duration:</span>
           <select id="duration" type="text" name="duration">
             <option value="">Select One</option>
             <option value="15">15</option>
             <option value="30">30</option>
             <option value="45">45</option>
             <option value="60">60</option>
-          </select> minutes </p>
+          </select> <span style="font-weight: bold">mins</span>
 
           <input type="Submit" id="workoutSubmit">
 
@@ -74,9 +74,9 @@
 
     <div class="background" id="ExerciseCards">
       <h2 class="subtitle"> Choose Your Exercises! </h2>
-      <p class="sub">To add an exercise to a workout, click and drag the
-        exercise to the workout box above. <br> Add several exercises to create a
-      custom workout.</p>
+      <h3 class="sub">To add an exercise to a workout, click and drag the
+        exercise to the workout box above. <br> Add several exercises to create
+        the perfect routine.</h3>
 
     </div>
 
