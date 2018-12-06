@@ -11,71 +11,73 @@
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <link rel="stylesheet" href="index.css">
   </head>
+
   <body>
-    <h1 class="title">Build-A-Bod!</h1>
 
+    <div class="background">
+      <h2 class="topsub"> Welcome <br> to </h2>
+      <h1 class="title"> Build-A-Bod</h1>
+      <h3 class="sub">Create and keep track of your own custom workouts!</h3>
+    </div>
 
+  <div class="background">
     <h2 class="subtitle">Create a Workout</h2>
-  <div class="create-workout-card">
-    <form id="newWorkout">
+    <div class="create-workout-card">
+      <form id="newWorkout">
 
-        <p>Workout Name:
-        <input type="text" id="workoutName" name="workoutName"></p>
+          <p>Workout Name:
+          <input type="text" id="workoutName" name="workoutName"></p>
 
-        <p>Day:
-        <select id="workoutDay" type="text" name="workoutDay">
-          <option value="">Select One</option>
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-          <option value="Sunday">Sunday</option>
-        </select></p>
+          <p>Day:
+          <select id="workoutDay" type="text" name="workoutDay">
+            <option value="">Select One</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select></p>
 
-        <p>Muscle Group:
-        <select id="muscleGroup" type="text" name="muscleGroup">
-          <option value="">Select One</option>
-          <option value="Abs">Abs</option>
-          <option value="Chest">Chest</option>
-          <option value="Arms">Arms</option>
-          <option value="Legs">Legs</option>
-          <option value="Glutes">Glutes</option>
-          <option value="Full Body">Full Body</option>
-        </select></p>
+          <p>Muscle Group:
+          <select id="muscleGroup" type="text" name="muscleGroup">
+            <option value="">Select One</option>
+            <option value="Abs">Abs</option>
+            <option value="Chest">Chest</option>
+            <option value="Arms">Arms</option>
+            <option value="Legs">Legs</option>
+            <option value="Glutes">Glutes</option>
+            <option value="Full Body">Full Body</option>
+          </select></p>
 
-        <p>Workout Duration:
-        <select id="duration" type="text" name="duration">
-          <option value="">Select One</option>
-          <option value="15">15</option>
-          <option value="30">30</option>
-          <option value="45">45</option>
-          <option value="60">60</option>
-        </select> minutes </p>
+          <p>Workout Duration:
+          <select id="duration" type="text" name="duration">
+            <option value="">Select One</option>
+            <option value="15">15</option>
+            <option value="30">30</option>
+            <option value="45">45</option>
+            <option value="60">60</option>
+          </select> minutes </p>
 
-        <input type="Submit" id="workoutSubmit">
+          <input type="Submit" id="workoutSubmit">
 
-    </form>
+      </form>
+    </div>
   </div>
 
-    <div id="workoutContainer" >
+
+    <div class="background" id="workoutContainer" >
       <h2 class="subtitle">Workouts</h2></div>
 
 
-    <div id="ExerciseCards">
+    <div class="background" id="ExerciseCards">
       <h2 class="subtitle"> Choose Your Exercises! </h2>
       <p class="sub">To add an exercise to a workout, click and drag the
-        exercise to the workout box above. Add several exercises to create a
+        exercise to the workout box above. <br> Add several exercises to create a
       custom workout.</p>
 
     </div>
-
-
-
-
-
-
 
 
     <script type="text/javascript" src="src/Exercise.js"></script>

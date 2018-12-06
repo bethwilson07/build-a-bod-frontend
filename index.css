@@ -1,28 +1,63 @@
+body {
+  background-image: url("https://wallpapertag.com/wallpaper/middle/c/2/5/198277-top-gym-background-2048x1430-for-hd-1080p.jpg");
+  background-size: 100%;
+  border: 2px solid black;
+  padding: 50px;
+}
+
+.background {
+  background: #1B1C1D;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  width: auto;
+  padding-bottom: 20px;
+  opacity: 0.9;
+}
+
 .title {
   text-align: center;
+  font-size: 4em;
+  color: #0099cc;
+}
+
+.topsub {
+  text-align: center;
+  font-style: italic;
+  font-weight: lighter;
+  padding-top: 20px;
 }
 
 .sub {
   text-align: center;
   font-style: italic;
-  font-weight: bold;
+  font-weight: lighter;
+  padding-bottom: 20px;
 }
 
 .card {
  text-align: center;
+ background-color: #d9d9d9;
+ color: #1B1C1D;
  border: grey solid 1px;
  display: inline-grid flex;
- margin: 1rem 2rem;
- box-shadow: 3px 4px #e04b52;
+ margin: 10px auto 10px auto;
+ box-shadow: 2px 3px #0099cc;
  padding-top: 10px;
  padding-bottom: 10px;
+ width: 40rem;
+ align-items: center;
+ justify-content: center;
+ opacity: 1;
 }
 
 .subtitle {
   text-align: center;
-  text-decoration: underline;
+  color: #0099cc;
+  text-decoration: overline underline;
   padding-top: 20px;
   padding-bottom: 10px;
+  font-weight: lighter;
+  opacity:1;
 }
 
 .create-workout-card {
@@ -35,7 +70,10 @@
   margin: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  box-shadow: 3px 4px
+  box-shadow: 3px 4px;
+  background-color: #d9d9d9;
+  color: #1B1C1D;
+  opacity: 1;
 }
 .exercises-div {
   padding-bottom: 10px;
@@ -44,12 +82,12 @@
 .delete-btn {
 }
 
-
 .exercise-photo {
  justify-self: center;
  height: 5rem;
  width: 5rem;
  float: left;
+ opacity: 1;
 }
 
 .exercise-card {
@@ -58,7 +96,10 @@
   width: 15rem;
   height: 15rem;
   display: inline-grid;
-  box-shadow: 3px 4px
+  box-shadow: 3px 4px;
+  background-color: #d9d9d9;
+  color: #1B1C1D;
+  opacity: 1;
 }
 
 .inner-card {
@@ -67,4 +108,7 @@
   width: 10rem;
   height: 10rem;
   display: inline-grid;
+  background-color: #FFFFFF;
+  color: #1B1C1D;
+  opacity: 1;
 }
