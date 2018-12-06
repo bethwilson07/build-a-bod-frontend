@@ -45,8 +45,14 @@ document.addEventListener("DOMContentLoaded", function () {
       targetSpot.append(dragged)
       getWorkoutExerciseIdForPatch(exerciseId, oldWoId, newWoId)
 
-    } else if (event.target.parentNode.className.includes("dropzone")) {
-      let woId = event.target.dataset.workoutId;
+    } else if (event.target.parentNode.className.includes("dropzone")||
+    event.target.parentNode.parentNode.className.includes("dropzone")) {
+      let woId;
+      if (event.target.hasAttribute('data-workout-id')) {
+        woId = event.target.dataset.workoutId;
+      } else {
+        woId = event.target.parentElement.parentElement.dataset.workoutId;
+      }
       addExToWorkout(exerciseId, woId)
 
     } else if (dragged.parentNode.parentNode.className.includes("dropzone")){
