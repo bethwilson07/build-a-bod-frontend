@@ -14,6 +14,11 @@ body {
   opacity: 0.9;
 }
 
+.image {
+  height: 175px;
+  width: 225px;
+}
+
 .title {
   text-align: center;
   font-size: 4em;
@@ -77,9 +82,6 @@ body {
 }
 .exercises-div {
   padding-bottom: 10px;
-}
-
-.delete-btn {
 }
 
 .exercise-photo {
