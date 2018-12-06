@@ -61,7 +61,7 @@ class Workout {
 
     div.append(name, day, muscleGroup, duration, exercises, deleteButton)
 
-      this.exercises.forEach(exercise => {
+    this.exercises.forEach(exercise => {
       exercises.appendChild(exercise.renderExercise())
       })
 

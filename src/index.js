@@ -22,20 +22,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener('drop', function(event) {
     event.preventDefault();
+
     let exerciseId = dragged.id.split('-')[1];
 
     if (event.target.parentNode.className.includes("dropzone") &&
     dragged.parentNode.parentNode.className.includes("dropzone")) {
-        // patch the workoutExercise join table's workout ID for the event.target
+        // need to fix dragging onto a card
       let oldWoId = dragged.parentNode.id.split('-')[1];
       let newWoId = event.target.dataset.workoutId;
+      let targetSpot = document.getElementById(`exercises-${newWoId}`)
+
+      targetSpot.append(dragged)
       getWorkoutExerciseIdForPatch(exerciseId, oldWoId, newWoId)
 
     } else if (event.target.parentNode.className.includes("dropzone")) {
       let woId = event.target.dataset.workoutId;
       addExToWorkout(exerciseId, woId)
 
-    } else {
+    } else if (dragged.parentNode.parentNode.className.includes("dropzone")){
       let woId = dragged.parentNode.id.split('-')[1];
       getWorkoutExerciseId(exerciseId, woId)
       dragged.remove();

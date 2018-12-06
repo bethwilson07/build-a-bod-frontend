@@ -10,3 +10,9 @@ duration
 
 * create exercise cards -- DONE
 * create a workout
+
+Debug:
+
+
+*dragging a exercise onto an exercise in the exercise div*
+exercise drag from one workout to another

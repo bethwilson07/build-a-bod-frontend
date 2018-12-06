@@ -14,14 +14,12 @@ class Exercise {
     div.id = `exercise-${this.id}`
     div.classList.add('inner-card')
 
-
-
     let nameEl = document.createElement('h4');
     nameEl.innerText = `${this.name}`
 
     let exImg = document.createElement('img')
     exImg.className = "exercise-photo"
-    exImg.draggable = "false"
+    exImg.draggable = false;
     exImg.src = `${this.image}`
 
     div.append(nameEl, exImg)
