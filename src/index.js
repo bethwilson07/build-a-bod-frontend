@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }, false)
 
   document.addEventListener('drop', function(event) {
-    debugger
     event.preventDefault();
     let exerciseId = dragged.id.split('-')[1];
 
@@ -198,7 +197,6 @@ function patchWorkoutExercise(workoutEx, newWoId) {
   let data = {
     workout_id: parseInt(newWoId),
   }
-  debugger
   fetch(`http://localhost:3000/workout_exercises/${id}`, {
     method: "PATCH",
     headers: {
