@@ -25,13 +25,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let exerciseId = dragged.id.split('-')[1];
 
-    if (event.target.parentNode.className.includes("dropzone") &&
-    dragged.parentNode.parentNode.className.includes("dropzone")) {
-        // need to fix dragging onto a card
+    // if we are moving an exercise from one workout to another
+      // this code  checks if the exercise is being dropped on a workout card
+    if ((event.target.parentNode.className.includes("dropzone") ||
+    event.target.parentNode.parentNode.className.includes("dropzone"))
+      //this code checks if the exercise is coming from a workout
+     && dragged.parentNode.parentNode.className.includes("dropzone")) {
+       //sets the id for the old workout
       let oldWoId = dragged.parentNode.id.split('-')[1];
-      let newWoId = event.target.dataset.workoutId;
+      //sets the id for the new workout
+      let newWoId;
+      if (event.target.hasAttribute('data-workout-id')) {
+        newWoId = event.target.dataset.workoutId;
+      } else {
+        newWoId = event.target.parentElement.parentElement.dataset.workoutId;
+      }
+      //sets the target where the dragged exercise will be appended
       let targetSpot = document.getElementById(`exercises-${newWoId}`)
-
       targetSpot.append(dragged)
       getWorkoutExerciseIdForPatch(exerciseId, oldWoId, newWoId)
 
