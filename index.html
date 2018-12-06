@@ -3,33 +3,69 @@
   <head>
     <meta charset="utf-8">
     <title>Build-A-Bod</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <h1>Build-A-Bod</h1>
+    <h1 class="title">Build-A-Bod!</h1>
 
-    <div>
+
+    <h2 class="subtitle">Create a Workout</h2>
+  <div class="create-workout-card">
     <form id="newWorkout">
 
-        Workout Name:
-        <input type="text" id="workoutName" name="workoutName"><br>
+        <p>Workout Name:
+        <input type="text" id="workoutName" name="workoutName"></p>
 
-      Day:
-      <input type="text" id="workoutDay" name="workoutDay"><br>
+        <p>Day:
+        <select id="workoutDay" type="text" name="workoutDay">
+          <option value="">Select One</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select></p>
 
-        Muscle Group:
-        <input type="text" id="muscleGroup" name="muscleGroup"><br>
+        <p>Muscle Group:
+        <select id="muscleGroup" type="text" name="muscleGroup">
+          <option value="">Select One</option>
+          <option value="Abs">Abs</option>
+          <option value="Chest">Chest</option>
+          <option value="Arms">Arms</option>
+          <option value="Legs">Legs</option>
+          <option value="Glutes">Glutes</option>
+          <option value="Full Body">Full Body</option>
+        </select></p>
 
-        Workout Duration:
-        <input type="text" id="duration" name="duration"><br>
+        <p>Workout Duration:
+        <select id="duration" type="text" name="duration">
+          <option value="">Select One</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="45">45</option>
+          <option value="60">60</option>
+        </select> minutes </p>
 
         <input type="Submit" id="workoutSubmit">
 
     </form>
   </div>
 
-    <div id="workoutContainer"></div>
-    <div id="ExerciseCards"> </div>
+    <div id="workoutContainer" >
+      <h2 class="subtitle">Workouts</h2></div>
+
+
+    <div id="ExerciseCards">
+      <h2 class="subtitle"> Choose Your Exercises! </h2>
+      <p class="sub">To add an exercise to a workout, click and drag the
+        exercise to the workout box above. Add several exercises to create a
+      custom workout.</p>
+
+    </div>
 
 
 

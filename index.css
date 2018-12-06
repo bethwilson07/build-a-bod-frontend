@@ -1,10 +1,49 @@
+.title {
+  text-align: center;
+}
+
+.sub {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
+
 .card {
  text-align: center;
  border: grey solid 1px;
  display: inline-grid flex;
  margin: 1rem 2rem;
  box-shadow: 3px 4px #e04b52;
+ padding-top: 10px;
+ padding-bottom: 10px;
 }
+
+.subtitle {
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.create-workout-card {
+  text-align: center;
+  border: grey solid 1px;
+  width: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 3px 4px
+}
+.exercises-div {
+  padding-bottom: 10px;
+}
+
+.delete-btn {
+}
+
 
 .exercise-photo {
  justify-self: center;
