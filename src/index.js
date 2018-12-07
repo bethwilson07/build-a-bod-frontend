@@ -223,18 +223,18 @@ function addExToWorkout(exerciseId, woId) {
     .then(data => {
 
       let newExercise = document.querySelector(`#exercise-${data.exercise_id}`);
-
+      let clone = newExercise.cloneNode(true)
   //bulletproof button removal!
-      if (newExercise.querySelector('button')) {
-        let button = newExercise.querySelector('button')
+      if (clone.querySelector('button')) {
+        let button = clone.querySelector('button')
         button.remove()
       }
 
-      newExercise.classList.add('inner-card');
-      newExercise.classList.remove('exercise-card');
+      clone.classList.add('inner-card');
+      clone.classList.remove('exercise-card');
       let exDiv = document.querySelector(`#exercises-${data.workout_id}`);
-
-      exDiv.appendChild(newExercise)
+      debugger
+      exDiv.appendChild(clone)
 
     })
 
