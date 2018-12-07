@@ -37,7 +37,7 @@ class Exercise {
 
 
     let descrBtn = document.createElement('button');
-    descrBtn.className = "ui blue basic button"
+    descrBtn.className = "ui black basic button"
     descrBtn.classList.add("exBtn")
     descrBtn.innerText = "Description"
 
@@ -46,7 +46,7 @@ class Exercise {
     descrP.innerText = `${this.description}`
 
     let goBackBtn = document.createElement('button');
-    goBackBtn.className = "ui blue basic button"
+    goBackBtn.className = "mini ui black basic button"
     goBackBtn.innerText = `Back`
 
     goBackBtn.addEventListener('click', function (e){
@@ -61,7 +61,7 @@ class Exercise {
 
     let exImg = document.createElement('img')
     exImg.className = "exercise-photo"
-    exImg.draggable = "false"
+    exImg.draggable = false
     exImg.src = `${this.image}`
 
     div.append(exName, exImg, descrBtn)
