@@ -50,18 +50,18 @@ class Workout {
 
     let deleteButton = document.createElement('button')
     deleteButton.className = "delete-btn"
+    deleteButton.classList.add('dropzone')
     deleteButton.id = `delete-workout-${this.id}`
     deleteButton.innerText = 'Delete Workout'
     deleteButton.dataset.workoutId = `${this.id}`
 
-
+    // adds a event listener to the delete button
     deleteButton.addEventListener('click', function(e) {
       deleteWorkout(e)
     })
-
+    //builds put the exercise card
     div.append(name, day, muscleGroup, duration, exercises, deleteButton)
-
-
+    // renders the exercises for the workout
     this.exercises.forEach(exercise => {
       exercises.appendChild(exercise.renderExercise())
       })
