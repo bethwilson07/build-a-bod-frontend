@@ -93,6 +93,11 @@ body {
  opacity: 1;
 }
 
+.description {
+  height: 6rem;
+  overflow-y: auto;
+}
+
 .exercise-card {
   text-align: center;
   border: grey solid 1px;
