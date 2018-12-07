@@ -233,7 +233,7 @@ function addExToWorkout(exerciseId, woId) {
       clone.classList.add('inner-card');
       clone.classList.remove('exercise-card');
       let exDiv = document.querySelector(`#exercises-${data.workout_id}`);
-      debugger
+      
       exDiv.appendChild(clone)
 
     })
