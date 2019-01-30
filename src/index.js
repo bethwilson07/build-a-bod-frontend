@@ -233,7 +233,7 @@ function addExToWorkout(exerciseId, woId) {
       clone.classList.add('inner-card');
       clone.classList.remove('exercise-card');
       let exDiv = document.querySelector(`#exercises-${data.workout_id}`);
-      
+
       exDiv.appendChild(clone)
 
     })
@@ -293,4 +293,10 @@ function patchWorkoutExercise(workoutEx, newWoId) {
     },
     body: JSON.stringify(data)
   })
+}
+
+////////////////////Filter Exercises//////////////////
+
+function getDropdown() {
+  
 }
